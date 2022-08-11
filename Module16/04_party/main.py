@@ -18,7 +18,6 @@ while True:
         print("Некому уходить, дом пуст!")
         break
 
-
     name_guest = input("Имя гостя: ").capitalize()
 
     if variant == "пришел":
@@ -32,11 +31,8 @@ while True:
             print(f"Прости, {name_guest}, но мест нет.\n")
 
     elif variant == "ушел":
-        
+
         if guests:
 
             guests.remove(name_guest)
             print(f"Пока, {name_guest}!\n")
-
-    
-

@@ -1,12 +1,12 @@
 # TODO здесь писать код
 
-size_skates =[
+size_skates = [
     int(
         input(f"Размер {i + 1}-й пары: ")
     ) for i in range(int(input("Кол-во коньков: ")))
 ]
 
-size_legs =[
+size_legs = [
     int(
         input(f"Размер ноги {i + 1}-го человека: ")
     ) for i in range(int(input("\nКол-во людей: ")))

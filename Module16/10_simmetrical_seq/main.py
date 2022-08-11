@@ -1,7 +1,7 @@
 # TODO здесь писать код
 
 numbers = [
-   int(input("Число: ")) for _ in range(int(input("Кол-во чисел: ")))
+    int(input("Число: ")) for _ in range(int(input("Кол-во чисел: ")))
 ]
 
 
