@@ -8,16 +8,12 @@ for i in ip_address:
         print("Адрес — это четыре числа, разделённые точками.")
         break
 
-    if not i.isdigit() and not int(i) < 0:
+    if not i.isdigit():
         print(f"{i} — это не целое число.")
         break
 
     elif int(i) > 255:
-        print(f"{i} превышает 255")
-        break
-
-    elif int(i) < 0:
-        print(f"{i} меньше 0")
+        print(f"{i} превышает 255.")
         break
 
 else:
