@@ -41,18 +41,10 @@ numbers = {
 }
 quantity_peoples = int(input("Введите количество человек: "))
 
-# test_list = [
-#     ['Alexei', 'Peter_I'], ['Anna', 'Peter_I'],
-#     ['Elizabeth', 'Peter_I'], ['Peter_II', 'Alexei'],
-#     ['Peter_III', 'Anna'], ['Paul_I', 'Peter_III'],
-#     ['Alexander_I', 'Paul_I'], ['Nicholaus_I', 'Paul_I']
-# ]
-
 lineage = dict()  # здесь хранится родословная
 levels = dict()  # здесь хранятся уровни родословной
 level = 0  # уровень родословной
 
-# for couple in test_list:
 for i in range(quantity_peoples - 1):
     couple = input(f"{numbers[i]} пара: ").split()
 
