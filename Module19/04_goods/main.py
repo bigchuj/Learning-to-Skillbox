@@ -29,15 +29,14 @@ store = {
 result = dict()
 
 for product in goods.keys():
-    temp_product = store[goods[product]]
-    temp_total_quantity = 0
-    temp_sum_price = 0
+    total_quantity = 0
+    total_price = 0
 
-    for values in temp_product:
-        temp_total_quantity += values['quantity']
-        temp_sum_price += (values['quantity'] * values['price'])
+    for values in store[goods[product]]:
+        total_quantity += values['quantity']
+        total_price += values['quantity'] * values['price']
 
-    result[product] = [temp_total_quantity, temp_sum_price]
+    result[product] = [total_quantity, total_price]
 
 
 [
