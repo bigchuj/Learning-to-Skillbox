@@ -5,3 +5,7 @@ players = {
 }
 
 # TODO здесь писать код
+
+players_tuple = [(*names, *glasses) for names, glasses in players.items()]
+
+print(players_tuple)
