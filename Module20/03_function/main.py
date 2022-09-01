@@ -1,8 +1,5 @@
 # TODO здесь писать код
 
-from ast import arg
-
-
 def slicer(args, elem):
 
     if elem in args:
