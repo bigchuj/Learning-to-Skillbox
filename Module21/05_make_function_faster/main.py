@@ -11,6 +11,10 @@
 from math import factorial as fact
 
 
-def calculating_math_func(data):
+def calculating_math_func(data, calculations=dict()):
 
-    return pow(fact(data) / pow(data, 3), 10)
+    if data not in calculations:
+
+        calculations[data] = (fact(data), pow(data, 3))
+
+    return pow(calculations[data][0] / calculations[data][1], 10)
