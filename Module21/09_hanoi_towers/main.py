@@ -17,4 +17,5 @@ def move(hight, begin_point, final_point):
         move(hight - 1, middle_point, final_point)
 
 
-move(3, 1, 3)
+quantity_discs = int(input("Введите количество дисков: "))
+move(quantity_discs, 1, 3)
