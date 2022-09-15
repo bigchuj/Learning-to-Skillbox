@@ -1,15 +1,9 @@
 # TODO здесь писать код
 
-def fibonachi(num_pos, num_fib_before=0, num_fib=1):
+def fibonachi(position, count=1):
 
-    if num_pos == 1:
-        return num_fib
-
-    else:
-        num_pos -= 1
-        return fibonachi(
-            num_pos, num_fib, num_fib + num_fib_before
-        )
+    return fibonachi(position - 1) + fibonachi(position - 2) if position > 2\
+        else 1
 
 
 num_pos = int(input("Введите позицию числа в ряде Фибоначчи: "))
