@@ -50,8 +50,11 @@ def quantity_letters_and_words(txt):
     return count_letters, count_words
 
 
+# way_file = os.path.abspath(os.path.join(
+#     "Module22", "02_zen_of_python", "zen.txt"))
+
 way_file = os.path.abspath(os.path.join(
-    "Module22", "02_zen_of_python", "zen.txt"))
+    "..", "02_zen_of_python", "zen.txt"))
 
 text = open(way_file, "r")
 txt = text.read().lower()

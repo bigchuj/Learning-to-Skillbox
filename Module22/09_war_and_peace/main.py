@@ -1,6 +1,7 @@
 # TODO здесь писать код
 
 import zipfile
+import os
 
 
 def reverse():
@@ -66,7 +67,9 @@ def count_letters(text):
     return letters_count
 
 
-file_1 = zipfile.ZipFile(r"Module22\09_war_and_peace\voyna-i-mir.zip")
+# file_1 = zipfile.ZipFile(r"Module22\09_war_and_peace\voyna-i-mir.zip")
+file_1 = zipfile.ZipFile("voyna-i-mir.zip")
+
 line = file_1.open("voyna-i-mir.txt")
 
 text = line.read().decode()
@@ -79,7 +82,8 @@ action_with_file = input(
 ).lower()
 
 if action_with_file == "ф":
-    file_2 = open(r"Module22\09_war_and_peace\analisis.txt", "w")
+    #file_2 = open(r"Module22\09_war_and_peace\analisis.txt", "w")
+    file_2 = open("analisis.txt", "w")
     [file_2.write(result + "\n") for result in result_analisis]
     file_2.close()
 
