@@ -50,7 +50,6 @@ def count_letters(text):
     for letter in text:
 
         n_let = ord(letter)
-        #n_let = letter
 
         if (65 <= n_let <= 90 or
             97 <= n_let <= 122 or
@@ -67,7 +66,6 @@ def count_letters(text):
     return letters_count
 
 
-# file_1 = zipfile.ZipFile(r"Module22\09_war_and_peace\voyna-i-mir.zip")
 file_1 = zipfile.ZipFile("voyna-i-mir.zip")
 
 line = file_1.open("voyna-i-mir.txt")
@@ -82,8 +80,7 @@ action_with_file = input(
 ).lower()
 
 if action_with_file == "ф":
-    #file_2 = open(r"Module22\09_war_and_peace\analisis.txt", "w")
-    file_2 = open("analisis.txt", "w")
+    file_2 = open("analisis.txt", "w", encoding="utf-8")
     [file_2.write(result + "\n") for result in result_analisis]
     file_2.close()
 
