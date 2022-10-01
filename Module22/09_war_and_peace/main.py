@@ -19,7 +19,7 @@ def analisis(letters_count):
     results = dict()
 
     for letter in letters_count:
-        result = round(letters_count[letter] / summ_letter, 6)
+        result = round(letters_count[letter] * 100 / summ_letter, 6)
 
         if result in results:
             results[result].append(letter)
