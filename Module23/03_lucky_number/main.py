@@ -11,12 +11,12 @@ try:
 
         random_num = randint(1, 13)
 
-        if random_num == 1:
-            raise BaseException
-
         with open("out_file.txt", "a") as out_file:
             out_file.write("{}".format(str(temp_num)))
             out_file.write("\n")
+        
+        if random_num == 1:
+            raise BaseException
 
         total_num += temp_num
 
