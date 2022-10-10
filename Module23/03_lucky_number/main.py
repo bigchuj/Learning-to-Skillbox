@@ -30,9 +30,8 @@ finally:
 
     print("Содержимое файла out_file.txt:")
     try:
-        with open("out_file.txt", "r+") as out_file_print:
+        with open("out_file.txt", "r") as out_file_print:
             print(out_file_print.read())
-            out_file_print.truncate(0)
 
     except FileNotFoundError:
         print("В файл не записано никаких значений.")
