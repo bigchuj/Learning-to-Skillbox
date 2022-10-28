@@ -160,7 +160,16 @@ class Administration:
 
             if name_parent:
                 
-                age_parent = int(input("Введите возраст: "))
+                while True:
+
+                    age_parent = int(input("Введите возраст: "))
+
+                    if age_parent <= 16:
+                        print("Возраст родителя не может быть меньше 17-ти лет.")
+                        continue
+
+                    break
+
                 parent = deepcopy(Parent(name_parent, age_parent))
                 
                 while True:
@@ -210,63 +219,3 @@ class Administration:
 start = Administration()
 start.parents()
 start.print_family_tree()
-
-
-# parents_and_kids = {}
-# count_parent = 0  # счетчик веток родителей
-
-# while True:
-
-#     count_kid = 0  # счетчик количетсва детей
-#     count_parent += 1
-#     name_parent = input("\nВведите имя родителя или 'Enter' для окончания ввода: ")
-
-#     if name_parent:
-        
-#         age_parent = int(input("Введите возраст: "))
-#         parent = deepcopy(Parent(name_parent, age_parent))
-        
-#         while True:
-            
-#             name_kid = input("\nВведите имя ребенка или 'Enter' для окончания ввода: ")
-            
-#             if name_kid:
-
-#                 while True:  # проверка на возраст
-                    
-#                     count_kid += 1
-#                     age_kid = int(input("Введите возраст: "))
-
-#                     if age_parent - age_kid < 16:
-
-#                         print(
-#                             "Возраст ребенка должен быть меньше возраста родителя хотя бы на 16 лет."
-#                         )
-#                         continue
-
-#                     break
-
-#                 kid = Kid(name_kid, age_kid, count_kid, parent)
-#                 kid.state_of_calm_()  # состояние спокойствия
-#                 kid.state_of_hunger_()  # состояние голода
-            
-#             else:
-#                 break        
-    
-#         # написать вывод информации о родителе
-#         parents_and_kids[count_parent] = parent #deepcopy(parent)
-#         option = input("Вывести информацию о родителе (да/нет)? ").lower()
-#         if option == "да":
-#             parent.info_about_yourself()
-#     else:
-#         break
-
-
-
-# print()
-
-# for num, cl in parents_and_kids.items():
-
-#     print(f"\nИнформация о генеалогической ветки номер {num}:")
-#     cl.info_about_yourself()
-
