@@ -4,22 +4,21 @@ from copy import deepcopy
 
 
 class Parent:
-    
+    reactions_to_state_of_calm_kids = {
+        "Спокоен": "Вместе радуемся хорошему настроению",
+        "Нервничает": "Глажу ребенка по голове, целую в щеку",
+        "Плачет": "Беру на руки и успокаиваю"
+    }
+    reactions_to_state_of_hunger_kids = {
+        "Голодный": "Покормить ребенка",
+        "Сытый": "Отправить ребенка играть"
+    }
+
     def __init__(self, name=None, age=None, kids={}) -> None:
         
         self.name = name
         self.age = age
         self.kids = kids
-        self.reactions_to_state_of_calm_kids = {
-            "Спокоен": "Вместе радуемся хорошему настроению",
-            "Нервничает": "Глажу ребенка по голове, целую в щеку",
-            "Плачет": "Беру на руки и успокаиваю"
-        }
-        self.reactions_to_state_of_hunger_kids = {
-            "Голодный": "Покормить ребенка",
-            "Сытый": "Отправить ребенка играть"
-        }
-
 
     def info_about_yourself(self):
         # печатает параметры о себе и списком выводит детей с их параметрами
@@ -81,6 +80,21 @@ class Parent:
 
 
 class Kid:
+    number_kids = {
+        1: "\n  Первый ребенок:", 2: "\n  Второй ребенок:", 3: "\n  Третий ребенок:",
+        4: "\n  Четвертый ребенок:", 5: "\n  Пятый ребенок:", 6: "\n  Шестой ребенок:",
+        7: "\n  Седьмой ребенок:", 8: "\n  Восьмой ребенок:", 9: "\n  Девятый ребенок:",
+        10: "\n  Десятый ребенок:"
+    }
+    states_of_calm = {
+        1: "Спокоен",
+        2: "Нервничает",
+        3: "Плачет"
+    }
+    states_of_hunger = {
+        1: "Голодный",
+        2: "Сытый"
+    }
     
     def __init__(self, name, age, number_kid, parent=None) -> None:
         
@@ -88,21 +102,6 @@ class Kid:
         self.age = age
         self.number_kid = number_kid
         self.parent = parent
-        self.number_kids = {
-            1: "\n  Первый ребенок:", 2: "\n  Второй ребенок:", 3: "\n  Третий ребенок:",
-            4: "\n  Четвертый ребенок:", 5: "\n  Пятый ребенок:", 6: "\n  Шестой ребенок:",
-            7: "\n  Седьмой ребенок:", 8: "\n  Восьмой ребенок:", 9: "\n  Девятый ребенок:",
-            10: "\n  Десятый ребенок:"
-        }
-        self.states_of_calm = {
-            1: "Спокоен",
-            2: "Нервничает",
-            3: "Плачет"
-        }
-        self.states_of_hunger = {
-            1: "Голодный",
-            2: "Сытый"
-        }
         self.parent.add_kids(self.name, self.age, self.number_kids[self.number_kid])
 
 
@@ -199,7 +198,7 @@ class Administration:
                     else:
                         break        
             
-                # написать вывод информации о родителе
+                # вывод информации о родителе
                 self.parents_and_kids[self.count_parent] = parent
                 option = input("Вывести информацию о родителе (да/нет)? ").lower()
                 if option == "да":
